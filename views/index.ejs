@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>Welcome to the Course Project App</h1>
+<p>This is a simple story-sharing app with user authentication.</p>
+
+<% if (!user) { %>
+  <p>
+    <a href="/users/new">Sign Up</a>
+  </p>
+  <p>
+    <a href="/users/login">Login</a>
+  </p>
+<% } else { %>
+  <p>
+    <a href="/users/profile">My Profile</a>
+  </p>
+  <p>
+    <a href="/stories">View Stories</a>
+  </p>
+  <p>
+    <a href="/stories/new">Create a Story</a>
+  </p>
+  <p>
+    <a href="/users/logout">Logout</a>
+  </p>
+<% } %>
+
+<h2>Stories</h2>
+
+<% if (stories.length) { %>
+  <p>Select a story to read:</p>
+  <% stories.forEach(story => { %>
+    <p>
+      <a href="/stories/<%= story._id %>"><%= story.title %></a>
+    </p>
+  <% }) %>
+<% } else { %>
+  <p>There are no stories to display.</p>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>

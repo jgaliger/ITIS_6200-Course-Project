@@ -4,10 +4,11 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
+// const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const storyRoutes = require('./routes/storyRoutes');
 const userRoutes = require('./routes/userRoutes');
+const Story = require('./models/story');
 
 //create app
 const app = express();
@@ -18,9 +19,9 @@ let host = 'localhost';
 app.set('view engine', 'ejs');
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/demos', 
-                {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-.then(()=>{
+mongoose.connect('mongodb://localhost:27017/demos')
+                //{useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+ .then(()=>{
     //start app
     app.listen(port, host, ()=>{
         console.log('Server is running on port', port);
@@ -34,8 +35,8 @@ app.use(
         secret: "ajfeirf90aeu9eroejfoefj",
         resave: false,
         saveUninitialized: false,
-        store: new MongoStore({mongoUrl: 'mongodb://localhost:27017/demos'}),
-        cookie: {maxAge: 60*60*1000}
+        // store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/demos'}),
+        cookie: {maxAge: 60 * 60 * 1000}
         })
 );
 app.use(flash());
@@ -55,8 +56,10 @@ app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 
 //set up routes
-app.get('/', (req, res)=>{
-    res.render('index');
+app.get('/', (req, res, next) => {
+    Story.find()
+        .then(stories=>res.render('index', {stories}))
+        .catch(err=>next(err));
 });
 
 app.use('/stories', storyRoutes);
