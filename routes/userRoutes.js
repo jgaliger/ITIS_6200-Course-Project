@@ -1,26 +1,17 @@
 const express = require('express');
-const controller = require('../controllers/userController');
-const {isGuest,isLoggedIn} = require('../middlewares/auth');
-const {validateId} = require('../middlewares/validator');
+const controller = require('../controllers/userActions');
 
 const router = express.Router();
+//Return create account page
+router.get('/newUser', controller.account);
+router.post('/', controller.create);
+//return profile and verify login
+router.get('/login', controller.verify);
+router.post('/login', controller.login);
+router.get('/home', controller.profile);
 
-//GET /users/new: send html form for creating a new user account
-router.get('/new', isGuest, controller.new);
-
-//POST /users: create a new user account
-router.post('/', isGuest ,controller.create);
-
-//GET /users/login: send html for logging in
-router.get('/login',isGuest , controller.getUserLogin);
-
-//POST /users/login: authenticate user's login
-router.post('/login',isGuest , controller.login);
-
-//GET /users/profile: send user's profile page
-router.get('/profile',isLoggedIn, controller.profile);
-
-//POST /users/logout: logout a user
-router.get('/logout',isLoggedIn, controller.logout);
+router.get('/logout', controller.logout)
+router.get('/user',controller.profile)
 
 module.exports = router;
+

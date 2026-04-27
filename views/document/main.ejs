@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs')%>
+        <%if(document.length) {%>
+            <p>Select a document to read</p>
+            <%document.forEach(document=>{%>
+               <a href = "/documents/<%= document.id%>"> <p><%= document.title%></p></a>
+           <% });
+        } else {%>
+            <p>There are no documents to display.</p>
+        <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

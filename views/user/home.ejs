@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs')%>
+    <h2>Welcome, <%= user.username%></h2>
+    <%if(document.length){%>
+        <p>You have not created documents</p>
+        <%document.forEach(document=>{%>
+            <a href='/documents/<%=document.id%>'><p><%=document.title%></p></a>
+            <% });
+    }else{%>
+        <p>No created documents</p>
+        <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

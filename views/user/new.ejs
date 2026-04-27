@@ -1,21 +1,11 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/header.ejs')%>
+    <form action = '/users' method = 'POST' class="user-form">
+            <label for="username">First Name</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" minlength="8" required>
+            <input type="submit" value="Sign Up">      
+    </form>
 
-<h1>Sign Up</h1>
-
-<form action="/users" method="POST">
-  <label for="firstName">First Name</label>
-  <input type="text" name="firstName" id="firstName" required>
-
-  <label for="lastName">Last Name</label>
-  <input type="text" name="lastName" id="lastName" required>
-
-  <label for="email">Email</label>
-  <input type="email" name="email" id="email" required>
-
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" required>
-
-  <button type="submit">Create Account</button>
-</form>
-
-<%- include('../partials/footer.ejs') %>
+    </div>
+    <%- include('../partials/footer.ejs')%>

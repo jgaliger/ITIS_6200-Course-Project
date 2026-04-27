@@ -1,6 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Course Project</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>SFA (Secure File Application)</title>
 </head>
 <body>
+    <nav>
+        <h2>SFA</h2>
+            <div class="nav-wrapper">
+                <a href='/'>Home</a>
+                <a href='/documents'>View Documents</a>
+                <a href='/documents/upload'>Upload Document</a>
+                <%if(!user){%>
+                    <a href='/users/newUser'>Sign Up</a>
+                <a href='/users/login'>Login</a>
+               <% }else{%>
+                <a href='/users/home'>Profile</a>
+                <a href='/users/logout'>Logout</a>
+                <a href='/documents/request/'>Requests</a>
+               <% }%>
+            </div>
+    </nav>
+
+

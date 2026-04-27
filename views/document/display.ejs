@@ -1,0 +1,13 @@
+<%- include('../partials/header.ejs')%>
+       <h4><%= document.title%></h4>
+       <div id = "document"><a href ="/<%= document.filePath%>">Download Document</a></div></div>
+       <form>
+          <button type = "submit" formmethod = "POST" formaction = "/documents/<%= document.id%>?_method=DELETE">Delete</button>
+       </form>
+       <form action="/documents/<%= document.id%>/send" method="POST">
+         <label for="username">Enter Username:</label>
+         <input type="text" id="username" name="username">
+         <input type="submit" value="Submit">
+       </form>
+    </div>
+    <%- include('../partials/footer.ejs')%>

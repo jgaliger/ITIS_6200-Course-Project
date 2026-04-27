@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs')%>
+<%if(document.length) {%>
+    <p>Please accept or deny these file transfers.</p>
+    <%document.forEach(document=>{%>
+    <form form action = "/documents/<%= document.id%>/accept" method="POST">
+       <p>Accept: <%= document.title%></p>
+       <button type = "submit">Accept</button>
+       </form>
+       <form action = "/documents/<%= document.id%>/reject" method="POST">
+       <p>Deny: <%= document.title%></p>
+       <button type = "submit">Deny</button>
+    </form>
+    
+   <% });
+} else {%>
+    <p>There are no documents to display.</p>
+<%}%>
+
+
+<%- include('../partials/footer.ejs')%>

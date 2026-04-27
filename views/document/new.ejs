@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs')%>
+    <form action="/documents" method="POST" class="new-form" enctype="multipart/form-data">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+        <label for="myFile">Select a file:</label>
+        <input type="file" id="myFile" name="myFile">
+        <input type="submit" value="Upload">
+      </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>
