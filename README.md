@@ -2,7 +2,10 @@ README
 
 
 Attack Stimulation:
-1. In order to examine the local application, run (npm install -l) on vscode in order to install Node.js and MongoDB.
+1. From the project root:
+    a. npm install
+       i. If dependencies are missing, install manually with the line below:
+   b. npm install express ejs morgan method-override mongoose express-session connect-mongo connect-flash bcrypt
 2. One installed, run (node attackStimulator.js) in order to start the file
     a. Status: Displays the current ratchet values associated with Alice and Bob
     b. Snapshot: Saves the current state of Alice's ratchet in order to perform attack
@@ -26,11 +29,13 @@ Attack Stimulation:
   3. Status
   4. Step...
 
-  5. Perform these actions until satisfied with the results.
+  5. Perform these actions until satisfied with the results. This showcases fresh ratchers for every file sent.
 
 Working Application: 
-1. In order to examine the local application, run (npm install -l) on vscode in order to install Node.js and MongoDB.
-     a. I apologize if this causes any issues, but you may need to establish a connection to AtlasDB and MongoDB, with the relevant applications.
-     b. In order to do this, you must create a localhost cluster on Mongo DB Compass, using the url (mongodb://localhost:27017/demos).
-     c. This will effectively create a demo cluster so that you can stiimulate the web application. In order to test the application, creating an account is required.
-3. Once the application is up and running, explore freely.
+1. From the project root:
+    a. npm install
+       i. If dependencies are missing, install manually with the line below:
+    b. npm install express ejs morgan method-override mongoose express-session connect-mongo connect-flash bcrypt
+       i. In order to do this, you must create a localhost cluster on Mongo DB Compass, using the url (mongodb://localhost:27017/demos).
+       ii. This will effectively create a demo cluster so that you can stiimulate the web application. In order to test the application, creating an account is required.
+2. Once the application is up and running, explore freely.
