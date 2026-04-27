@@ -44,9 +44,7 @@ Working Application:
     a. npm install
        i. If dependencies are missing, install manually with the line below:
     b. npm install express ejs morgan method-override mongoose express-session connect-mongo connect-flash bcrypt
-   
        i. In order to do this, you must create a localhost cluster on Mongo DB Compass, using the url (mongodb://localhost:27017/demos).
-   
        ii. This will effectively create a demo cluster so that you can stiimulate the web application. In order to test the application, creating an account is required.
    
 3. Once the application is up and running, explore freely.
