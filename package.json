@@ -1,23 +1,14 @@
 {
-  "name": "itis_6200-course-project",
+  "name": "itis_6200",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "password.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jgaliger/ITIS_6200-Course-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/jgaliger/ITIS_6200-Course-Project/issues"
-  },
-  "homepage": "https://github.com/jgaliger/ITIS_6200-Course-Project#readme",
+  "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "connect-flash": "^0.1.1",
@@ -26,7 +17,9 @@
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "method-override": "^3.0.0",
-    "mongoose": "^9.5.0",
-    "morgan": "^1.10.1"
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.3.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.1.1"
   }
 }
