@@ -9,10 +9,11 @@ University of North Carolina at Charlotte
 
 ## Overview
 
-This project implements a secure file-sharing web application that protects file contents using a cryptographic layer adapted from the Signal Protocol. The server stores only ciphertext and is architecturally incapable of reading file contents, even under full compromise.
+This project is a secure file-sharing prototype built for ITIS 6200. It combines a web application with a cryptographic prototype to demonstrate how modern security mechanisms can be applied in practice.
 
-**Primary mechanism:** X3DH key agreement + Symmetric-Key Ratchet + AES-256-GCM  
-**Supporting mechanisms:** bcrypt password hashing (cost factor 10) + session-based access control
+The project has two main parts:
+1. A **web application prototype** built with Node.js, Express, MongoDB, EJS, sessions, and bcrypt.
+2. A **cryptographic prototype** that demonstrates X3DH-style key agreement, a symmetric-key ratchet, AES-256-GCM encryption, and a rollback attack simulation.
 
 ---
 
